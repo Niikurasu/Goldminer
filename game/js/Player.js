@@ -32,15 +32,15 @@ class Player {
 
   checkIfPressed() {
     // Check keys
-    if(keyCode == LEFT_ARROW) { // left
+    if(keyCode == LEFT_ARROW || keyCode == 65) { // left
       if(this.x > 0) {
         this.moveLeft = true;
       }
-    } else if (keyCode == RIGHT_ARROW) { // right
+    } else if (keyCode == RIGHT_ARROW || keyCode  == 68) { // right
       if(this.x < width) {
         this.moveRight = true;
       }
-    } else if (keyCode == UP_ARROW|| keyCode == 87) {
+    } else if (keyCode == UP_ARROW|| keyCode  == 87) {
       if(this.y == height - grassHeight - this.height) {
         this.isJumping = true;
 
@@ -51,7 +51,7 @@ class Player {
   checkifDown() {
     if(keyCode == LEFT_ARROW || keyCode == 65) { // left
       this.moveLeft = false;
-    } else if (keyCode == RIGHT_ARROW || keyCode == 68) { // right
+    } else if (keyCode == RIGHT_ARROW || keyCode  == 68) { // right
       this.moveRight = false;
     }
   }
