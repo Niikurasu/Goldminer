@@ -9,7 +9,9 @@
 - [x] Coin Falling
 - [x] Coin Spawn System
 - [x] Collision Detection
-- [ ] Add pictures / textures
+- [ ] make velocity / gravity not hardcoded / variable
+- [ ] Higher framerate
+- [ ] Add pictures / textures -> maybe someone else?
 
 - [ ] Enemy Class
 - [ ] Enemy Falling

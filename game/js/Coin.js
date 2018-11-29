@@ -6,7 +6,7 @@ class Coin {
     this.x = random(width-this.width);
     this.y = -1500 - random(2000);
     this.gravity = 10
-    
+
   }
 
   update() {
