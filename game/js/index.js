@@ -38,8 +38,8 @@ function draw() {
     goldCoins[i].update();
   }
   for (var i = 0; i < enemies.length; i++) {
-    enemies[i].show();
     enemies[i].update();
+    enemies[i].show();
   }
 
   // Chech for collisions

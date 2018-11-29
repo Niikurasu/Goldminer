@@ -9,10 +9,9 @@ class Enemy {
   }
 
   update() {
-    this.y += this.gravity;
-
+    this.gravity= 10 + score/2;
+    this.y = this.y + this.gravity
     if(this.y > height) this.reset();
-    this.gravity= 10 + score/5;
   }
 
   show() {
