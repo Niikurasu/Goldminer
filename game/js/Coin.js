@@ -4,8 +4,9 @@ class Coin {
     this.width = 20;
     this.height = 20;
     this.x = random(width-this.width);
-    this.y = -500 - random(2000);
+    this.y = -1500 - random(2000);
     this.gravity = 10
+    
   }
 
   update() {

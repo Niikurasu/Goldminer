@@ -8,7 +8,8 @@
 - [x] Coin Class
 - [x] Coin Falling
 - [x] Coin Spawn System
-- [ ] Collision Detection
+- [x] Collision Detection
+- [ ] Add pictures / textures
 
 - [ ] Enemy Class
 - [ ] Enemy Falling
@@ -18,6 +19,5 @@
 - [ ] Score System
 - [ ] Score Text
 
-- [ ] Add pictures / textures
 - [ ] Main screen
 - [ ] Music

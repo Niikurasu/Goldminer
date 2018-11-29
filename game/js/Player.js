@@ -10,6 +10,7 @@ class Player {
     this.maxY = 300;
     this.moveLeft = false;
     this.moveRight = false;
+    this.img = loadImage("img/cart.png");
   }
 
   update() {
@@ -19,13 +20,14 @@ class Player {
   }
 
   show() {
-    fill(128, 128, 128) // grey color
-    rect(this.x, this.y, this.width, this.height) // for the beginning the player is a rectangle, change to picture!
+    // fill(128, 128, 128) // grey color
+    // rect(this.x, this.y, this.width, this.height) // for the beginning the player is a rectangle, change to picture!
+    image(this.img, this.x, this.y)
   }
 
   placeInBorder() {
     if(this.x < 0) this.x = 0;
-    if(this.x+this.width > width) this.x = width-this.width;
+    if(this.x+this.width >= width-5) this.x = width-this.width-5;
   }
 
   checkIfPressed() {
