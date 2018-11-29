@@ -17,8 +17,8 @@
 - [x] Enemy Spawning
 - [x] Hit detection
 
-- [ ] Score System
-- [ ] Score Text
+- [x] Score System
+- [x] Score Text
 
 - [ ] Main screen
 - [ ] Music

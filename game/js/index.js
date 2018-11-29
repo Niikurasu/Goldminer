@@ -4,14 +4,15 @@ var goldCoins = [];
 var enemies = [];
 var numberEnemies=4;
 let numberCoins = 2;
-
+let grass_img;
 var score = 0
 
 function setup() {
   frameRate(60);
   createCanvas(1000, 600);
   noStroke();
-
+  grass_img = loadImage("img/grass.png")
+  score = 0;
   player = new Player();
   for (var i = 0; i < numberCoins; i++) {
     goldCoins[i] = new Coin();
@@ -27,7 +28,7 @@ function draw() {
   background(100, 175, 255); // light blue backgrond
   // draw grass
   fill(124, 204, 25); // color of grass
-  rect(0, height-grassHeight, width, height); // height of grass = 50px
+  image(grass_img, 0, height-grassHeight); // height of grass = 50px
   // draw Player
   player.update();
   player.show();
