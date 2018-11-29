@@ -56,6 +56,18 @@ function keyReleased() {
   player.checkifDown()
 }
 
+function touchStarted() {
+  if(mouseX > width/2) {
+    player.moveRight = true;
+  } else {
+    player.moveLeft = true;
+  }
+}
+
+function touchEnded() {
+  player.moveLeft = false;
+  player.moveRight = false;
+}
 
 function mineGoldCollisionCheck() {
   for (var i = 0; i <goldCoins.length; i++) {
