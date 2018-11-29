@@ -56,22 +56,20 @@ function keyReleased() {
   player.checkifDown()
 }
 
-function touchMoved() {
+function touchStarted() {
   if(mouseX > width/2) {
-    // player.moveRight = true;
-    // player.moveLeft = false;
-    player.x += player.velocity;
+    player.moveRight = true;
+    player.moveLeft = false;
   } else {
-    // player.moveLeft = true;
-    // player.moveRight = false;
-    player.x -= player.velocity;
+    player.moveLeft = true;
+    player.moveRight = false;
   }
 }
 
-// function touchEnded() {
-//   player.moveLeft = false;
-//   player.moveRight = false;
-// }
+function touchEnded() {
+  player.moveLeft = false;
+  player.moveRight = false;
+}
 
 function mineGoldCollisionCheck() {
   for (var i = 0; i <goldCoins.length; i++) {
