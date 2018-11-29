@@ -3,10 +3,10 @@
 - [x] Player Class
 - [x] Player Movement
 - [x] Player Jumping
-- [ ] Fix Multiple Keys Bug
+- [x] Fix Multiple Keys Bug
 
-- [ ] Coin Class
-- [ ] Coin Falling
+- [x] Coin Class
+- [x] Coin Falling
 - [ ] Coin Spawn System
 - [ ] Score System
 - [ ] Score Text

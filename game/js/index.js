@@ -1,9 +1,14 @@
 let grassHeight = 50;
 var player;
+var goldCoins = [];
+let numberCoins = 2;
 function setup() {
   createCanvas(1000, 600);
   noStroke();
-  player = new Player()
+  player = new Player();
+  for (var i = 0; i < numberCoins; i++) {
+    goldCoins[i] = new Coin();
+  }
 }
 
 function draw() {
@@ -14,8 +19,20 @@ function draw() {
   // draw Player
   player.update();
   player.show();
+
+  for (var i = 0; i < goldCoins.length; i++) {
+    goldCoins[i].show();
+    goldCoins[i].update();
+  }
 }
 
+function keyPressed() {
+  player.checkIfPressed()
+}
+
+function keyReleased() {
+  player.checkifDown()
+}
 
 
 
@@ -27,14 +44,16 @@ class Player {
     this.x = width/2 - this.width/2;
     this.velocity = 10;
     this.isJumping = false;
-    this.gravity = 15;
+    this.gravity = 11;
     this.maxY = 300;
+    this.moveLeft = false;
+    this.moveRight = false;
   }
 
   update() {
-     this.checkKeys()
      this.placeInBorder()
      this.jump()
+     this.move();
   }
 
   show() {
@@ -47,22 +66,29 @@ class Player {
     if(this.x+this.width > width) this.x = width-this.width;
   }
 
-  checkKeys() {
+  checkIfPressed() {
     // Check keys
-    if(keyIsDown(LEFT_ARROW)) { // left
+    if(keyCode == LEFT_ARROW) { // left
       if(this.x > 0) {
-        this.x -= this.velocity
+        this.moveLeft = true;
       }
-    } else if (keyIsDown(RIGHT_ARROW)) { // right
+    } else if (keyCode == RIGHT_ARROW) { // right
       if(this.x < width) {
-        this.x += this.velocity
+        this.moveRight = true;
       }
-    } else if (keyIsDown(UP_ARROW)) {
+    } else if (keyCode == UP_ARROW) {
       if(this.y == height - grassHeight - this.height) {
         this.isJumping = true;
 
     }
+    }
+  }
 
+  checkifDown() {
+    if(keyCode == LEFT_ARROW) { // left
+      this.moveLeft = false;
+    } else if (keyCode == RIGHT_ARROW) { // right
+      this.moveRight = false;
     }
   }
 
@@ -74,7 +100,44 @@ class Player {
     } else {
       if(this.y < height-grassHeight-this.height) this.y += this.gravity;
     }
+  }
+
+    move() {
+      if (this.moveLeft) {
+        this.x -= this.velocity
+      } else if (this.moveRight) {
+        this.x += this.velocity
+      }
     }
 
+
+}
+
+class Coin {
+
+  constructor() {
+    this.width = 20;
+    this.height = 20;
+    this.x = random(width-this.width);
+    this.y = -500 - random(2000);
+    this.gravity = 10
+  }
+
+  update() {
+    this.y += 10;
+
+    if(this.y > height) this.reset();
+  }
+
+  show() {
+    fill(255, 215, 0) // Gold color
+    rect(this.x, this.y, this.width, this.height)
+
+  }
+
+  reset() {
+    this.y = -500 - random(2000);
+    this.x = random(width-this.width);
+  }
 
 }
