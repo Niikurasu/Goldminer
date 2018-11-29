@@ -58,11 +58,13 @@ function keyReleased() {
 
 function touchMoved() {
   if(mouseX > width/2) {
-    player.moveRight = true;
-    player.moveLeft = false;
+    // player.moveRight = true;
+    // player.moveLeft = false;
+    player.x += player.velocity;
   } else {
-    player.moveLeft = true;
-    player.moveRight = false;
+    // player.moveLeft = true;
+    // player.moveRight = false;
+    player.x -= player.velocity;
   }
 }
 
