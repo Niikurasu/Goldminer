@@ -1,12 +1,10 @@
-class Coin {
-
+class Enemy {
   constructor() {
     this.width = 40;
     this.height = 40;
     this.x = random(width-this.width);
     this.y = -1500 - random(2000);
     this.gravity = 10
-    this.img = loadImage("img/coin.png");
   }
 
   update() {
@@ -16,22 +14,20 @@ class Coin {
   }
 
   show() {
-    // fill(255, 215, 0) // Gold color
-    // rect(this.x, this.y, this.width, this.height)
-    image(this.img, this.x, this.y);
+    fill(255, 0, 0) // Gold color
+    rect(this.x, this.y, this.width, this.height)
+
 
   }
 
   reset() {
-    this.y = -500 - random(2000);
+    this.y = -1000 - random(10000);
     this.x = random(width-this.width);
   }
 
   collided() {
     // ADD FUTURE POOINTS
-    console.log("HIT!!!")
-    score+=1;
-    this.reset();
+    alert("You lost! You scored " + score + " points");
+    setup();
   }
-
 }

@@ -9,14 +9,13 @@
 - [x] Coin Falling
 - [x] Coin Spawn System
 - [x] Collision Detection
-- [ ] make velocity / gravity not hardcoded / variable
-- [ ] Higher framerate
+- [x] Higher framerate
 - [ ] Add pictures / textures -> maybe someone else?
 
-- [ ] Enemy Class
-- [ ] Enemy Falling
-- [ ] Enemy Spawning
-- [ ] Hit detection
+- [x] Enemy Class
+- [x] Enemy Falling
+- [x] Enemy Spawning
+- [x] Hit detection
 
 - [ ] Score System
 - [ ] Score Text

@@ -60,7 +60,6 @@ class Player {
     if(this.isJumping) {
       this.y -= this.gravity;
       if(this.y < this.maxY) this.isJumping = false;
-      console.log(this.y)
     } else {
       if(this.y < height-grassHeight-this.height) this.y += this.gravity;
     }
