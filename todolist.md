@@ -7,14 +7,16 @@
 
 - [x] Coin Class
 - [x] Coin Falling
-- [ ] Coin Spawn System
-- [ ] Score System
-- [ ] Score Text
+- [x] Coin Spawn System
+- [ ] Collision Detection
 
 - [ ] Enemy Class
 - [ ] Enemy Falling
 - [ ] Enemy Spawning
 - [ ] Hit detection
+
+- [ ] Score System
+- [ ] Score Text
 
 - [ ] Add pictures / textures
 - [ ] Main screen
