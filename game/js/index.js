@@ -6,13 +6,20 @@ var numberEnemies=4;
 let numberCoins = 2;
 let grass_img;
 var score = 0
+var gameState = 0 // 0 = main menu, 1 = game
 
 function setup() {
   frameRate(60);
   createCanvas(1000, 600);
   noStroke();
   grass_img = loadImage("img/grass.png")
+  
+}
+
+function setupGame() {
+  
   score = 0;
+  
   player = new Player();
   for (var i = 0; i < numberCoins; i++) {
     goldCoins[i] = new Coin();
@@ -21,31 +28,37 @@ function setup() {
   for (var i = 0; i < numberEnemies; i++) {
     enemies[i] = new Enemy();
   }
-
+  
 }
 
 function draw() {
-  background(100, 175, 255); // light blue backgrond
-  // draw grass
-  fill(124, 204, 25); // color of grass
-  image(grass_img, 0, height-grassHeight); // height of grass = 50px
-  // draw Player
-  player.update();
-  player.show();
+  if(gameState==0) {
+    background(100, 255, 100);
+    textSize(100);
+    text("Hello World", 250, 250);
+  } else{
+    background(100, 175, 255); // light blue backgrond
+    // draw grass
+    fill(124, 204, 25); // color of grass
+    image(grass_img, 0, height-grassHeight); // height of grass = 50px
+    // draw Player
+    player.update();
+    player.show();
 
-  for (var i = 0; i < goldCoins.length; i++) {
-    goldCoins[i].show();
-    goldCoins[i].update();
-  }
-  for (var i = 0; i < enemies.length; i++) {
-    enemies[i].update();
-    enemies[i].show();
-  }
+    for (var i = 0; i < goldCoins.length; i++) {
+      goldCoins[i].show();
+      goldCoins[i].update();
+    }
+    for (var i = 0; i < enemies.length; i++) {
+      enemies[i].update();
+      enemies[i].show();
+    }
 
-  // Chech for collisions
-  mineGoldCollisionCheck();
-  mineEnemyCollisionTest();
-  drawScore();
+    // Chech for collisions
+    mineGoldCollisionCheck();
+    mineEnemyCollisionTest();
+    drawScore();
+  }
 }
 
 function keyPressed() {
