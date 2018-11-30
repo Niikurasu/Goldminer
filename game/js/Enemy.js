@@ -9,7 +9,7 @@ class Enemy {
   }
 
   update() {
-    this.gravity= 10 + score/2;
+    this.gravity= 10 + score/3;
     this.y = this.y + this.gravity
     if(this.y > height) this.reset();
   }
