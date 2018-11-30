@@ -13,13 +13,13 @@ function setup() {
   createCanvas(1000, 600);
   noStroke();
   grass_img = loadImage("img/grass.png")
-  
+
 }
 
 function setupGame() {
-  
+
   score = 0;
-  
+
   player = new Player();
   for (var i = 0; i < numberCoins; i++) {
     goldCoins[i] = new Coin();
@@ -28,14 +28,15 @@ function setupGame() {
   for (var i = 0; i < numberEnemies; i++) {
     enemies[i] = new Enemy();
   }
-  
+
 }
 
 function draw() {
   if(gameState==0) {
-    background(100, 255, 100);
+    background(66, 134, 244);
     textSize(100);
-    text("Hello World", 250, 250);
+    fill(0)
+    text("Press Screen To Start the Game!", 250, 250);
   } else{
     background(100, 175, 255); // light blue backgrond
     // draw grass
@@ -73,7 +74,7 @@ function touchStarted() {
     gameState=1;
     setupGame();
   } else {
-  
+
     if(mouseX > width/2) {
       player.moveRight = true;
       player.moveLeft = false;
