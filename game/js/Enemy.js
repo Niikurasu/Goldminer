@@ -30,6 +30,6 @@ class Enemy {
   collided() {
     // ADD FUTURE POOINTS
     alert("You lost! You scored " + score + " points");
-    setup();
+    setupGame()
   }
 }
