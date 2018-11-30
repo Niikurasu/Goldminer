@@ -39,17 +39,16 @@ function draw() {
   } else{
     background(100, 175, 255); // light blue backgrond
     // draw grass
-    fill(124, 204, 25); // color of grass
     image(grass_img, 0, height-grassHeight); // height of grass = 50px
     // draw Player
     player.update();
     player.show();
 
-    for (var i = 0; i < goldCoins.length; i++) {
+    for (var i = 0; i < goldCoins.length; i++) { // updating and drawing the coins
       goldCoins[i].show();
       goldCoins[i].update();
     }
-    for (var i = 0; i < enemies.length; i++) {
+    for (var i = 0; i < enemies.length; i++) { // updating and drawing the enemies / bombs
       enemies[i].update();
       enemies[i].show();
     }
@@ -70,12 +69,18 @@ function keyReleased() {
 }
 
 function touchStarted() {
-  if(mouseX > width/2) {
-    player.moveRight = true;
-    player.moveLeft = false;
+  if(gameState == 0) {
+    gameState=1;
+    setupGame();
   } else {
-    player.moveLeft = true;
-    player.moveRight = false;
+  
+    if(mouseX > width/2) {
+      player.moveRight = true;
+      player.moveLeft = false;
+     } else {
+      player.moveLeft = true;
+      player.moveRight = false;
+    }
   }
 }
 
